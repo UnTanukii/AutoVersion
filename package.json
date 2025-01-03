@@ -1,0 +1,65 @@
+{
+  "name": "autoversion",
+  "displayName": "AutoVersion",
+  "description": "AutoVersion is a VS Code extension for managing semantic versioning in Node.js projects",
+  "version": "0.0.1",
+  "icon": "resources/icon.png",
+  "publisher": "UnTanukii",
+  "license": "GPL-3.0-only",
+  "author": {
+    "name": "untanukii",
+    "discord": "@untanukii",
+    "twitter": "@untanukii"
+  },
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "autoversion.changeVersion",
+      "title": "AutoVersion - Change Version",
+      "icon": {
+        "light": "./resources/git.svg",
+        "dark": "./resources/git.svg"
+      }
+    }],
+    "keybindings": [{
+      "command": "autoversion.changeVersion",
+      "key": "ctrl+shift+v",
+      "mac": "cmd+shift+v",
+      "when": "editorTextFocus"
+    }],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "autoversion.changeVersion",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UnTanukii/AutoVersion"
+  }
+}
