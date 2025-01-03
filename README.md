@@ -1,65 +1,80 @@
-# autoversion README
+# AutoVersion
 
-This is the README for your extension "autoversion". After writing up a brief description, we recommend including the following sections.
+**AutoVersion** is a Visual Studio Code extension designed for managing semantic versioning in Node.js projects. It allows developers to easily increment the version number (major, minor, patch) in any file (such as `package.json`), and also integrates with Git to automatically update the commit message with the new version number.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Automatic Version Incrementing**: 
+  - Increment the version number (major, minor, patch) in a user-defined file (e.g., `package.json`).
+  
+- **Git Integration**: 
+  - Automatically append the new version number to the commit message in Git.
 
-For example if there is an image subfolder under your extension project workspace:
+- **Customizable File**: 
+  - You can configure which file to edit for versioning (default is `package.json`).
 
-\!\[feature X\]\(images/feature-x.png\)
+## Commands
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. **AutoVersion - Change Version**: 
+   - Increment the version of your project in the selected file.
+   - Use `Ctrl+Shift+V` (Windows/Linux) or `Cmd+Shift+V` (macOS) to trigger this command.
+
+## Installation
+
+1. Open **Visual Studio Code**.
+2. Navigate to the **Extensions** panel.
+3. Search for `AutoVersion` and install it.
+4. Alternatively, you can install it directly from the marketplace using this [link](https://marketplace.visualstudio.com/items?itemName=untanukii.autoversion).
+
+## Configuration
+
+By default, the extension will modify the `package.json` file. However, you can configure it to edit any file by setting the `autoversion.fileToEdit` property in the workspace or user settings:
+
+```json
+{
+  "autoversion.fileToEdit": "myfile.json"
+}
+```
+
+### Settings
+
+- **autoversion.fileToEdit**: The file to edit for versioning (default is `package.json`).
+
+## Usage
+
+1. Open a project folder in Visual Studio Code with a versioned file (e.g., `package.json`).
+2. To update the version, press the assigned keyboard shortcut `Ctrl+Shift+V` (Windows/Linux) or `Cmd+Shift+V` (macOS).
+3. The extension will prompt you to select the type of version increment (patch, minor, major).
+4. The version number will be updated in the specified file, and the commit message will be updated with the new version.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Visual Studio Code version: **1.96.0** or higher.
+- Node.js project with a file containing a version number (e.g., `package.json`).
+- Git: Required for updating the commit message with the new version number.
 
-## Extension Settings
+## Development
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+To contribute to the development of AutoVersion, clone the repository and run the following commands:
 
-For example:
+```bash
+# Install dependencies
+npm install
 
-This extension contributes the following settings:
+# Run the extension in a development environment
+npm run watch
+```
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## License
 
-## Known Issues
+This extension is licensed under the **GPL-3.0-only** license.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## Author
 
-## Release Notes
+- **Name**: UnTanukii
+- **Discord**: [@untanukii](https://discord.com/)
+- **Twitter**: [@untanukii](https://twitter.com/untanukii)
 
-Users appreciate release notes as you update your extension.
+## Repository
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- GitHub: [https://github.com/UnTanukii/AutoVersion](https://github.com/UnTanukii/AutoVersion)

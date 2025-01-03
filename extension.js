@@ -16,9 +16,10 @@ function activate(context) {
 				vscode.window.showErrorMessage('AutoVersion: No workspace is open.');
 				return;
 			}
-			const packageJsonPath = path.join(vscode.workspace.workspaceFolders[0].uri.fsPath, 'package.json');
+			const fileToEdit = vscode.workspace.getConfiguration('autoversion').get('fileToEdit');
+			const packageJsonPath = path.join(vscode.workspace.workspaceFolders[0].uri.fsPath, fileToEdit);
 			if(!fs.existsSync(packageJsonPath)){
-				vscode.window.showErrorMessage('AutoVersion: package.json not found.');
+				vscode.window.showErrorMessage(`AutoVersion: ${fileToEdit} not found.`);
 				return;
 			};
 			const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));

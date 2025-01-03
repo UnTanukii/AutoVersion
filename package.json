@@ -2,7 +2,7 @@
   "name": "autoversion",
   "displayName": "AutoVersion",
   "description": "AutoVersion is a VS Code extension for managing semantic versioning in Node.js projects",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icon": "resources/icon.png",
   "publisher": "UnTanukii",
   "license": "GPL-3.0-only",
@@ -42,6 +42,16 @@
           "group": "navigation"
         }
       ]
+    },
+    "configuration":{
+      "type": "object",
+      "properties": {
+        "autoversion.fileToEdit": {
+          "type": "string",
+          "description": "The file to edit",
+          "default": "package.json"
+        }
+      }
     }
   },
   "scripts": {
