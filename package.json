@@ -4,7 +4,7 @@
   "description": "AutoVersion is a VS Code extension for managing semantic versioning in Node.js projects",
   "version": "0.0.2",
   "icon": "resources/icon.png",
-  "publisher": "UnTanukii",
+  "publisher": "tanukii",
   "license": "GPL-3.0-only",
   "author": {
     "name": "untanukii",
