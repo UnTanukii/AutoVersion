@@ -80,6 +80,9 @@ function activate(context) {
 				if(currentMessage){
 					const newMessage = `${currentMessage.trim()} - ${newVersion}`;
 					api.repositories[0].inputBox.value = newMessage;
+				}else{
+					vscode.window.showWarningMessage('AutoVersion: No commit message found.');
+					return;
 				}
 			}
 	

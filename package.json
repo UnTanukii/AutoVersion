@@ -2,7 +2,7 @@
   "name": "autoversion",
   "displayName": "AutoVersion",
   "description": "AutoVersion is a VS Code extension for managing semantic versioning in Node.js projects",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "icon": "resources/icon.png",
   "publisher": "tanukii",
   "license": "GPL-3.0-only",
@@ -20,20 +20,23 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "autoversion.changeVersion",
-      "title": "AutoVersion - Change Version",
-      "icon": {
-        "light": "./resources/git.svg",
-        "dark": "./resources/git.svg"
+    "commands": [
+      {
+        "command": "autoversion.changeVersion",
+        "title": "AutoVersion - Change Version",
+        "icon": {
+          "light": "./resources/git.svg",
+          "dark": "./resources/git.svg"
+        }
       }
-    }],
-    "keybindings": [{
-      "command": "autoversion.changeVersion",
-      "key": "ctrl+shift+v",
-      "mac": "cmd+shift+v",
-      "when": "editorTextFocus"
-    }],
+    ],
+    "keybindings": [
+      {
+        "command": "autoversion.changeVersion",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v"
+      }
+    ],
     "menus": {
       "scm/title": [
         {
@@ -43,7 +46,7 @@
         }
       ]
     },
-    "configuration":{
+    "configuration": {
       "type": "object",
       "properties": {
         "autoversion.fileToEdit": {
